@@ -25,7 +25,6 @@
 		9AED2B8B27E328F90084B16A /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AED2B8A27E328F90084B16A /* Result.swift */; };
 		9AED2B8D27E32F120084B16A /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AED2B8C27E32F120084B16A /* Extensions.swift */; };
 		9AED2B9027E332AD0084B16A /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AED2B8E27E332AD0084B16A /* DetailsViewController.swift */; };
-		9AED2B9527E342130084B16A /* DetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AED2B9427E342130084B16A /* DetailsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,7 +48,6 @@
 		9AED2B8A27E328F90084B16A /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		9AED2B8C27E32F120084B16A /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		9AED2B8E27E332AD0084B16A /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
-		9AED2B9427E342130084B16A /* DetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,7 +134,6 @@
 			isa = PBXGroup;
 			children = (
 				9AED2B8E27E332AD0084B16A /* DetailsViewController.swift */,
-				9AED2B9427E342130084B16A /* DetailsView.swift */,
 			);
 			path = DetailsScreen;
 			sourceTree = "<group>";
@@ -270,7 +267,6 @@
 				9AED2B7127E326AB0084B16A /* FeedTableViewController.swift in Sources */,
 				9AED2B7027E326AB0084B16A /* FeedTableViewModel.swift in Sources */,
 				9AED2B8627E327590084B16A /* DataParser.swift in Sources */,
-				9AED2B9527E342130084B16A /* DetailsView.swift in Sources */,
 				9AED2B8D27E32F120084B16A /* Extensions.swift in Sources */,
 				9AED2B9027E332AD0084B16A /* DetailsViewController.swift in Sources */,
 			);
