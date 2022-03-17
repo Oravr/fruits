@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol FeedTableViewModel: ViewModelPressable {
+protocol FeedTableViewModel {
     var cellViewModels: Observable<[FruitCellViewModel]?> {get set}
     var isLoading: Observable<Bool> { get }
     var repository: Repository { get }
@@ -23,9 +23,7 @@ class FeedTableViewModelImpl: FeedTableViewModel {
     let repository: Repository
     var parser: DataParser
     var cellViewModels: Observable<[FruitCellViewModel]?> = Observable(value: nil)
-    let isLoading = Observable<Bool>(value: false)
-    var cellPressed: (() -> Void)?
-    
+    let isLoading = Observable<Bool>(value: false)  
 
     required init(with repository: Repository, parser: DataParser) {
         self.repository = repository

@@ -8,7 +8,3 @@
 import Foundation
 
 protocol RowViewModel {}
-
-protocol ViewModelPressable {
-    var cellPressed: (()->Void)? { get set }
-}
