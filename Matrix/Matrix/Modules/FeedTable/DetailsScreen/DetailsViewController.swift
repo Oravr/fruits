@@ -48,17 +48,22 @@ class DetailsViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .black
         setupImageView()
-
+        setupStackView()
+        title = viewModel.getName()
+    }
+    
+    private func setupStackView() {
         stackView.translatesAutoresizingMaskIntoConstraints = false
-
+        
         self.view.addSubview(stackView)
-        //Constraints
-        stackView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        stackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
-        stackView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor).isActive = true
-        stackView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor).isActive = true
-        stackView.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 20).isActive = true
-
+        
+        NSLayoutConstraint.activate([
+            stackView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            stackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+            stackView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
+            stackView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+            stackView.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 20),
+        ])
     }
     
     private func setupImageView() {
