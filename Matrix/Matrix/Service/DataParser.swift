@@ -7,24 +7,23 @@
 
 import Foundation
 
-enum DataParserResults {
-    case Success
-    case Error(String)
+enum DataParserResults<T> {
+    case success(models: T)
+    case failure(String)
 }
 
 protocol DataParser {
-    func decode<T: Codable>(data: Data, with completionHandler: (T?) -> Void)
+    func decode<T: Codable>(data: Data, with completionHandler: (DataParserResults<T>) -> Void)
 }
 struct JSONDataParser: DataParser {
-    func decode<T: Codable>(data: Data, with completionHandler: (T?) -> Void) {
+    func decode<T: Codable>(data: Data, with completionHandler: (DataParserResults<T>) -> Void) {
 
         let decoder = JSONDecoder()
         do {
             let model = try decoder.decode(T.self, from: data)
-            completionHandler(model)
+            completionHandler(.success(models: model))
         } catch {
-            print("**Failed to Decode JSON with error: \(error)")
-            fatalError()
+            completionHandler(.failure("Failed to Decode JSON with error: \(error)"))
         }
     }
 }

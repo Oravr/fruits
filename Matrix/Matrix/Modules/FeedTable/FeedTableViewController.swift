@@ -45,6 +45,13 @@ private extension FeedTableViewController  {
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(FruitCell.nib(), forCellReuseIdentifier: FruitCell.identifier)
+        tableView.backgroundColor = .black
+    }
+    
+    private func showDetailsViewControler(for viewModel: FruitCellViewModel) {
+        let detailsVC = DetailsViewController()
+        detailsVC.setup(with: viewModel)
+        show(detailsVC, sender: self)
     }
 }
 
@@ -77,9 +84,8 @@ extension FeedTableViewController  {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let fruitViewModel = viewModel.cellViewModels.value?[indexPath.row] {
-            let detailsVC = DetailsViewController()
-            detailsVC.setup(with: fruitViewModel)
-            show(detailsVC, sender: self)
+            showDetailsViewControler(for: fruitViewModel)
+            //Needs to move Logic to some Coordinator..
         }
     }
 }

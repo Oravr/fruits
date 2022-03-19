@@ -61,9 +61,12 @@ private extension FeedTableViewModelImpl {
     }
     
     private func handleSuccessDataFetch(with data: Data) {
-        parser.decode(data: data) { [weak self] (models: Fruits?) in
-            if let models = models {
+        parser.decode(data: data) { [weak self] (result: DataParserResults<Fruits>) in
+            if case .success(let models) = result {
                 self?.setupCellsViewModels(with: models)
+            }
+            if case .failure (let error) = result {
+                fatalError("\(error)")
             }
         }
     }
